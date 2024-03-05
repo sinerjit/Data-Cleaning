@@ -21,7 +21,11 @@ FROM covid_deaths]]></console>
 FROM covid_deaths]]></console>
     </connection>
     <connection id="6c3a8daf-61d2-4eac-8308-6a6ff356cd22">
-      <console name="Housing" type="STANDARD" schema="public" session="Main" />
+      <console name="Housing" type="STANDARD" schema="public" session="Main"><![CDATA[select "SaleDate"
+FROM housing
+
+ALTER TABLE housing
+ALTER COLUMN "SaleDate" TYPE DATE USING TO_DATE("SaleDate", 'FMMonth DD, YYYY');]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -37,9 +41,6 @@ FROM covid_deaths]]></console>
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
-  </component>
-  <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/data_cleaning.sql" connection-id="53b05b02-a247-40ef-a6b2-670b4d56ac3f" session-id="MAIN" current-schema="public" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
