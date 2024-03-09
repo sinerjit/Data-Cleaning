@@ -1,24 +1,31 @@
-Data Cleaning Project
+# Data Cleaning Project
 
-This project aims to clean and organize the data from the housing table in the database. Below are the summarized steps of the project:
+This project focuses on cleaning and organizing data from the "housing" table in the database. The key functions utilized in the project are briefly outlined below:
 
-Examine the SaleDate Field:
+1. **Standardize Date Format:**
+    - The "SaleDate" column is converted to a DATE type using the TO_DATE function to standardize the date format.
 
-View the data in the SaleDate field.
-Find Null Values and Add New Columns:
+2. **Populate Property Address Data:**
+    - The NULL values in the "PropertyAddress" column are identified and handled.
+    - Merging duplicate records based on the "ParcelID" and updating NULL values in the "PropertyAddress" column.
 
-Identify null values in the PropertyAddress field.
-Split the PropertyAddress field and add to new columns.
-Split and Add New Columns for the OwnerAddress Field:
+3. **Breaking Out Address into Individual Columns (Address, City, State):**
+    - The "PropertyAddress" column is split into separate columns for address, city, and state.
 
-Split the OwnerAddress field and add to new columns.
-Update the SoldAsVacant Field:
+4. **Breaking Out Owner Address into Individual Columns (Address, City, State)**
+    - The "OwnerAddress" column is split into separate columns for address, city, and state.
 
-Update 'Y' and 'N' values in the SoldAsVacant field to 'Yes' and 'No'.
-Find and Delete Duplicate Rows:
+5. **Change Y and N to Yes and No in "Sold as Vacant" Field:**
+    - The values 'Y' and 'N' in the "SoldAsVacant" column are updated to 'Yes' and 'No' respectively.
 
-Identify and delete duplicate rows.
-Drop Unused Columns:
+6. **Remove Duplicates:**
+    - Duplicate records based on certain columns are identified using the ROW_NUMBER function and are subsequently removed.
 
-Drop columns that are not being used.
-These steps have been performed to clean and enhance the usability of the data.
+7. **Delete Unused Columns:**
+    - Unused columns such as "OwnerAddress," "TaxDistrict," and "PropertyAddress" are dropped from the table.
+
+These functions collectively contribute to the cleaning and enhancement of the data for improved usability.
+
+
+
+
